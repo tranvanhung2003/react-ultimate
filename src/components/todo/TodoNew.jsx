@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
 
 const TodoNew = ({ addNewTodo }) => {
@@ -26,10 +25,6 @@ const TodoNew = ({ addNewTodo }) => {
       <div>My text input is: {valueInput}</div>
     </div>
   );
-};
-
-TodoNew.propTypes = {
-  addNewTodo: PropTypes.func,
 };
 
 export default TodoNew;

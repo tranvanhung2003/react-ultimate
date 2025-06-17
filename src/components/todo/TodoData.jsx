@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 const TodoData = ({ todoList, deleteTodo }) => {
   const handleOnClick = (id) => {
     deleteTodo(id);
@@ -20,16 +18,6 @@ const TodoData = ({ todoList, deleteTodo }) => {
       ))}
     </div>
   );
-};
-
-TodoData.propTypes = {
-  todoList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-    })
-  ),
-  deleteTodo: PropTypes.func,
 };
 
 export default TodoData;
