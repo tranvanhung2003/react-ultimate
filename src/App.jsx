@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
@@ -44,6 +45,7 @@ const App = () => {
           </div>
         )}
       </div>
+      <Outlet />
       <Footer />
     </>
   );
