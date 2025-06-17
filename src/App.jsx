@@ -18,8 +18,17 @@ const App = () => {
     { id: 3, name: "Deploy to Production" },
   ]);
 
+  const randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   const addNewTodo = (name) => {
-    alert(`New todo added: ${name}`);
+    const newTodo = {
+      id: randomIntFromInterval(4, 1_000_000),
+      name: name,
+    };
+
+    setTodoList([...todoList, newTodo]);
   };
 
   return (

@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 
-const TodoData = () => {
+const TodoData = ({ todoList }) => {
   return (
     <div className="todo-data">
-      <div>Learning React</div>
-      <div>Learning JavaScript</div>
+      {todoList.map((todo) => (
+        <div key={todo.id}>{todo.name}</div>
+      ))}
     </div>
   );
 };
@@ -16,6 +17,12 @@ TodoData.propTypes = {
     address: PropTypes.string,
     country: PropTypes.string,
   }),
+  todoList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 export default TodoData;

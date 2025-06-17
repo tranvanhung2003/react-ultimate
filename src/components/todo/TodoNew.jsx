@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const TodoNew = () => {
+const TodoNew = ({ addNewTodo }) => {
   const [valueInput, setValueInput] = useState("");
 
   const handleClick = () => {
-    console.log(`>>> check valueInput: ${valueInput}`);
+    addNewTodo(valueInput);
+    alert(`New todo added: ${valueInput}`);
+    setValueInput("");
   };
 
   const handleOnChange = (name) => {
@@ -16,6 +18,7 @@ const TodoNew = () => {
     <div className="todo-new">
       <input
         type="text"
+        value={valueInput}
         onChange={(event) => handleOnChange(event.target.value)}
       />
       <button style={{ cursor: "pointer" }} onClick={handleClick}>
