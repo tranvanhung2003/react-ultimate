@@ -6,7 +6,6 @@ const TodoNew = ({ addNewTodo }) => {
 
   const handleClick = () => {
     addNewTodo(valueInput);
-    alert(`New todo added: ${valueInput}`);
     setValueInput("");
   };
 
