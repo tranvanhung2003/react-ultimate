@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import TodoApp from "./components/todo/TodoApp.jsx";
 import LoginPage from "./pages/Login.jsx";
 import ProductPage from "./pages/Product.jsx";
 import RegisterPage from "./pages/Register.jsx";
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
+      {
+        index: true,
+        element: <TodoApp />,
+      },
       {
         path: "users",
         element: <UserPage />,
