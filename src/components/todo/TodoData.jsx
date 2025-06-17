@@ -4,7 +4,10 @@ const TodoData = ({ todoList }) => {
   return (
     <div className="todo-data">
       {todoList.map((todo) => (
-        <div key={todo.id}>{todo.name}</div>
+        <div key={todo.id} className="todo-item">
+          <div>{todo.name}</div>
+          <button>Delete</button>
+        </div>
       ))}
     </div>
   );
