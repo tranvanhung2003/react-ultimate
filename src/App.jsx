@@ -5,11 +5,7 @@ import TodoData from "./components/todo/TodoData";
 import TodoNew from "./components/todo/TodoNew";
 
 const App = () => {
-  const [todoList, setTodoList] = useState([
-    { id: 1, name: "Learn React" },
-    { id: 2, name: "Build a Todo App" },
-    { id: 3, name: "Deploy to Production" },
-  ]);
+  const [todoList, setTodoList] = useState([]);
 
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
