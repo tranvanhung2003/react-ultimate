@@ -14,7 +14,14 @@ const UserForm = () => {
     if (res?.data) {
       notification.success({
         message: "User Created Successfully",
-        description: `User created successfully!`,
+        description: `User ${res?.data?.fullName} created successfully!`,
+      });
+    } else {
+      notification.error({
+        message: "User Creation Failed",
+        description: Array.isArray(res?.message)
+          ? res?.message.join(", ")
+          : res?.message,
       });
     }
   };

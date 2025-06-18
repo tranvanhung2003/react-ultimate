@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -31,6 +31,10 @@ instance.interceptors.response.use(
   },
   (error) => {
     // Do something with response error
+    if (error?.response?.data) {
+      return error.response.data;
+    }
+
     return Promise.reject(error);
   }
 );
