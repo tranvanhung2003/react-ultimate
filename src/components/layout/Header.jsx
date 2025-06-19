@@ -1,19 +1,36 @@
-import { NavLink } from "react-router-dom";
-import "./Header.css";
+// import "./Header.css";
+import { BookOutlined, HomeOutlined, UserOutlined } from "@ant-design/icons";
+import { Menu } from "antd";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
+
+  const items = [
+    {
+      label: <Link to="/">Home</Link>,
+      key: "/",
+      icon: <HomeOutlined />,
+    },
+    {
+      label: <Link to="/users">Users</Link>,
+      key: "/users",
+      icon: <UserOutlined />,
+    },
+    {
+      label: <Link to="/books">Books</Link>,
+      key: "/books",
+      icon: <BookOutlined />,
+    },
+  ];
+
   return (
-    <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/users">Users</NavLink>
-      </li>
-      <li>
-        <NavLink to="/books">Books</NavLink>
-      </li>
-    </ul>
+    <Menu
+      // onClick={onClick}
+      selectedKeys={[location.pathname]}
+      mode="horizontal"
+      items={items}
+    />
   );
 };
 
