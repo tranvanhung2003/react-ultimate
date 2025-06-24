@@ -12,7 +12,16 @@ export const createUserAPI = (fullName, email, password, phone) => {
   return axios.post(URL_BACKEND, data);
 };
 
-export const updateUserAPI = () => {};
+export const updateUserAPI = (_id, fullName, phone) => {
+  const URL_BACKEND = "/api/v1/user";
+  const data = {
+    _id,
+    fullName,
+    phone,
+  };
+
+  return axios.put(URL_BACKEND, data);
+};
 
 export const fetchAllUsersAPI = () => {
   const URL_BACKEND = "/api/v1/user";

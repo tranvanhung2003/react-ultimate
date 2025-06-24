@@ -1,9 +1,9 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
-import UpdateModalUser from "./UpdateModal.user";
 import { useState } from "react";
+import UpdateModalUser from "./UpdateModal.user";
 
-const UserTable = ({ dataUsers }) => {
+const UserTable = ({ dataUsers, loadUsers }) => {
   const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
   const [dataUpdate, setDataUpdate] = useState(null);
 
@@ -54,6 +54,7 @@ const UserTable = ({ dataUsers }) => {
         setIsModalUpdateOpen={setIsModalUpdateOpen}
         dataUpdate={dataUpdate}
         setDataUpdate={setDataUpdate}
+        loadUsers={loadUsers}
       />
     </>
   );
