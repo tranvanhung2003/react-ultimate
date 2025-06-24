@@ -2,7 +2,7 @@ import { Input, Modal, notification } from "antd";
 import { useEffect, useState } from "react";
 import { updateUserAPI } from "../../services/api.service";
 
-const UpdateModalUser = ({
+const UpdateUserModal = ({
   isModalUpdateOpen,
   setIsModalUpdateOpen,
   dataUpdate,
@@ -55,7 +55,6 @@ const UpdateModalUser = ({
       title="Update User"
       open={isModalUpdateOpen}
       closable={{ "aria-label": "Custom Close Button" }}
-      maskClosable={false}
       okText="Update"
       onOk={() => handleSubmitButton()}
       onCancel={() => resetAndCloseModal()}
@@ -84,4 +83,4 @@ const UpdateModalUser = ({
   );
 };
 
-export default UpdateModalUser;
+export default UpdateUserModal;
